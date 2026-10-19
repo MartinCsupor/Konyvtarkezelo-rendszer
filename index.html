@@ -6,8 +6,86 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Könyvtárkezelő rendszer</title>
 </head>
-<body>
-    
+<body class="min-h-screen bg-slate-100 p-6 text-slate-800 md:p-10">
+
+    <h1 class="mb-8 text-3xl font-bold tracking-tight text-slate-900">
+        Könyvtárkezelő rendszer
+    </h1>
+
+    <form class="mb-8 flex flex-col gap-3 rounded-2xl bg-white p-6 shadow-sm md:flex-row md:flex-wrap">
+        <input class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 md:flex-1" type="text" name="cim" id="cim" placeholder="Könyv címe">
+
+        <input class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 md:flex-1" type="text" name="szerzo" id="szerzo" placeholder="Szerző">
+
+        <input class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 md:w-32" type="text" name="kiadasi_ev" id="kiadasiEv" placeholder="Kiadási év">
+
+        <input class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 md:w-32" type="text" name="oldalszam" id="oldalszam" placeholder="Oldalszám">
+
+        <button class="rounded-lg bg-indigo-600 px-5 py-2.5 font-medium text-white shadow-sm transition hover:bg-indigo-700 active:scale-95" type="button" id="konyvHozzaad">
+            + Könyv hozzáadása
+        </button>
+    </form>
+
+    <div class="mb-6 flex flex-col gap-4 rounded-2xl bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+        <div class="flex flex-wrap gap-2">
+            <button class="rounded-lg bg-slate-900 px-4 py-2 font-medium text-white transition hover:bg-slate-700" id="osszesKonyv">
+                Összes könyv
+            </button>
+
+            <button class="rounded-lg border border-slate-200 bg-white px-4 py-2 font-medium text-slate-700 transition hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700" id="szabadKonyvek">
+                Szabad könyvek
+            </button>
+        </div>
+
+        <select class="rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100" id="kategoriak">
+            <option value="">-</option>
+            <option value="Regény">Regény</option>
+            <option value="Sci-fi">Sci-fi</option>
+            <option value="Történelmi">Történelmi</option>
+            <option value="Fantasy">Fantasy</option>
+        </select>
+    </div>
+
+    <div class="overflow-x-auto rounded-2xl bg-white shadow-sm">
+        <table class="w-full min-w-[650px] border-collapse text-left">
+            <thead class="bg-slate-50 text-sm uppercase tracking-wide text-slate-500">
+                <tr>
+                    <th class="px-6 py-4 font-semibold">Cím</th>
+                    <th class="px-6 py-4 font-semibold">Szerző</th>
+                    <th class="px-6 py-4 font-semibold">Kiadási év</th>
+                    <th class="px-6 py-4 font-semibold">Oldalszám</th>
+                    <th class="px-6 py-4 font-semibold">Kategória</th>
+                    <th class="px-6 py-4 font-semibold">Állapot</th>
+                    <th class="px-6 py-4 font-semibold">Törlés</th>
+                </tr>
+            </thead>
+
+            <tbody class="divide-y divide-slate-100 text-sm" id="tbody"></tbody>
+        </table>
+    </div>
+
+    <div class="mt-8 rounded-2xl bg-white p-6 shadow-sm">
+        <h2 class="mb-4 text-lg font-semibold text-slate-900">
+            Könyvtári statisztikák
+        </h2>
+
+        <div class="flex flex-wrap gap-3">
+            <button class="rounded-lg border border-slate-200 px-4 py-2.5 font-medium transition hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700" id="legregebbiKonyv">
+                Legrégebbi könyv
+            </button>
+
+            <button class="rounded-lg border border-slate-200 px-4 py-2.5 font-medium transition hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700" id="legvastagabbKonyv">
+                Legvastagabb könyv
+            </button>
+
+            <button class="rounded-lg border border-slate-200 px-4 py-2.5 font-medium transition hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700" id="atlagosOldalszam">
+                Átlagos oldalszám
+            </button>
+        </div>
+
+        <p class="mt-5 rounded-lg bg-indigo-50 p-4 text-sm font-medium text-indigo-800" id="statisztika"></p>
+    </div>
+
     <script src="index.js"></script>
 </body>
 </html>
