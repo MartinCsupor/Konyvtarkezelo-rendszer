@@ -12,20 +12,32 @@
         Könyvtárkezelő rendszer
     </h1>
 
-    <form class="mb-8 flex flex-col gap-3 rounded-2xl bg-white p-6 shadow-sm md:flex-row md:flex-wrap">
-        <input class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 md:flex-1" type="text" name="cim" id="cim" placeholder="Könyv címe">
+    <div class="mb-8 rounded-2xl bg-white p-6 shadow-sm">
+        <form class="flex flex-col gap-3  md:flex-row md:flex-wrap">
 
-        <input class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 md:flex-1" type="text" name="szerzo" id="szerzo" placeholder="Szerző">
-
-        <input class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 md:w-32" type="text" name="kiadasi_ev" id="kiadasiEv" placeholder="Kiadási év">
-
-        <input class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 md:w-32" type="text" name="oldalszam" id="oldalszam" placeholder="Oldalszám">
-
-        <button class="rounded-lg bg-indigo-600 px-5 py-2.5 font-medium text-white shadow-sm transition hover:bg-indigo-700 active:scale-95" type="button" id="konyvHozzaad">
-            + Könyv hozzáadása
-        </button>
-    </form>
-
+            <input class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 md:flex-1" type="text" name="cim" id="cim" placeholder="Könyv címe">
+    
+            <input class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 md:flex-1" type="text" name="szerzo" id="szerzo" placeholder="Szerző">
+    
+            <input class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 md:w-32" type="text" name="kiadasi_ev" id="kiadasiEv" placeholder="Kiadási év">
+    
+            <input class="w-full rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 md:w-32" type="text" name="oldalszam" id="oldalszam" placeholder="Oldalszám">
+           
+            <select class="rounded-lg border border-slate-200 bg-slate-50 px-4 py-2.5 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100" id="kategoria">
+                <option value="Regény">Regény</option>
+                <option value="Sci-fi">Sci-fi</option>
+                <option value="Történelmi">Történelmi</option>
+                <option value="Fantasy">Fantasy</option>
+            </select>
+    
+            <button class="rounded-lg bg-indigo-600 px-5 py-2.5 font-medium text-white shadow-sm transition hover:bg-indigo-700 active:scale-95" type="button" id="konyvHozzaad">
+                + Könyv hozzáadása
+            </button>
+        </form>
+        <p id="hozzaadError" class="text-red-500 text-center mt-3"></p>
+        <p id="hozzaadSuccess"class="text-green-500 text-center mt-3"></p>
+    </div>
+ 
     <div class="mb-6 flex flex-col gap-4 rounded-2xl bg-white p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between">
         <div class="flex flex-wrap gap-2">
             <button class="rounded-lg bg-slate-900 px-4 py-2 font-medium text-white transition hover:bg-slate-700" id="osszesKonyv">
